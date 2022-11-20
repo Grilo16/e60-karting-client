@@ -16,7 +16,8 @@ const DisplayAllRaces = () => {
   }, []);
 
   const handleSignUp = (raceId) => {
-    raceRepo.addDriverToRace(state.selectedDriver.id, raceId);
+    const driverId = state.selectedDriver.id
+    raceRepo.addDriverToRace(driverId, raceId);
   };
 
   const data = state.allRaces
