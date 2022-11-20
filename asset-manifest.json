@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/e60-karting-client/static/css/main.4152c3d3.css",
-    "main.js": "/e60-karting-client/static/js/main.f464e4d1.js",
+    "main.js": "/e60-karting-client/static/js/main.88db499d.js",
     "static/js/787.0e772355.chunk.js": "/e60-karting-client/static/js/787.0e772355.chunk.js",
     "index.html": "/e60-karting-client/index.html",
     "main.4152c3d3.css.map": "/e60-karting-client/static/css/main.4152c3d3.css.map",
-    "main.f464e4d1.js.map": "/e60-karting-client/static/js/main.f464e4d1.js.map",
+    "main.88db499d.js.map": "/e60-karting-client/static/js/main.88db499d.js.map",
     "787.0e772355.chunk.js.map": "/e60-karting-client/static/js/787.0e772355.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4152c3d3.css",
-    "static/js/main.f464e4d1.js"
+    "static/js/main.88db499d.js"
   ]
 }
