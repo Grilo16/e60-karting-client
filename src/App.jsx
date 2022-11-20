@@ -1,9 +1,8 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import {HashRouter as Router, Routes, Route, Link} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import UserDashboard from "./pages/UserDashboard";
 import styled from "styled-components"
-import { getAllDrivers } from "./repositories/driverRepo";
 
 export const AppContext = createContext(null)
 
@@ -56,10 +55,6 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-
-  useEffect(()=>{
-    getAllDrivers().then((drivers) => dispatch({type: "LoadDrivers", drivers}))
-  },[])
 
 
   return (

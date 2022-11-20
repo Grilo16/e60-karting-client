@@ -1,13 +1,18 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styled from "styled-components"
 import { AppContext } from "../App";
 import SelectDriverForm from "../containers/formContainers/SelectDriverForm";
 import SignUpForm from "../containers/formContainers/SignUpForm";
+import { getAllDrivers } from "../repositories/driverRepo";
 
 const HomePage = () => {
 
     const {state, dispatch} = useContext(AppContext)
 
+    useEffect(()=>{
+        getAllDrivers().then((drivers) => dispatch({type: "LoadDrivers", drivers}))
+      },[])
+    
 
     return (
         <PageContainerDiv>
