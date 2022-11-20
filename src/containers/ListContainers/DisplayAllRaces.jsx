@@ -3,8 +3,8 @@ import { AppContext } from "../../App";
 import SubmitButton from "../../components/formComponents/SubmitButton";
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import { addDriverToRace } from "../../repositories/raceDriverRepo";
-import { getAllRaces } from "../../repositories/raceRepo";
 import styled from "styled-components"
+import { getAllRaces } from "../../repositories/raceRepo";
 
 const DisplayAllRaces = () => {
   const { state, dispatch } = useContext(AppContext);
