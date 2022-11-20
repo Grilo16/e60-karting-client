@@ -4,6 +4,7 @@ import SubmitButton from "../../components/formComponents/SubmitButton";
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import styled from "styled-components"
 import raceRepo from "../../repositories/raceRepo";
+import raceDriverRepo from "../../repositories/raceDriverRepo";
 
 const DisplayAllRaces = () => {
   const { state, dispatch } = useContext(AppContext);
@@ -16,7 +17,7 @@ const DisplayAllRaces = () => {
 
   const handleSignUp = (raceId) => {
     const driverId = state.selectedDriver.id
-    raceRepo.addDriverToRace(driverId, raceId);
+    raceDriverRepo.addDriverToRace(driverId, raceId);
   };
 
   const data = state.allRaces
