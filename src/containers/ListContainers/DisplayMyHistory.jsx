@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import styled from "styled-components";
 import { AppContext } from "../../App";
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import { ContentDiv } from "../../pages/HomePage";

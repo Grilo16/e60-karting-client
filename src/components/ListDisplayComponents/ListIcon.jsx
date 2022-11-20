@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { StyledGridDiv } from "./ListDisplay";
 
 const ListIcon = ({

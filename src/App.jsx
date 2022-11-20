@@ -1,8 +1,4 @@
 import { createContext, useEffect, useReducer, useState } from "react";
-import DisplayAllDrivers from "./containers/ListContainers/DisplayAllDrivers";
-import NewRaceForm from "./containers/formContainers/NewRaceForm";
-import SignUpForm from "./containers/formContainers/SignUpForm";
-import DisplayAllRaces from "./containers/ListContainers/DisplayAllRaces";
 import {HashRouter as Router, Routes, Route, Link} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import UserDashboard from "./pages/UserDashboard";
@@ -65,10 +61,6 @@ function App() {
     getAllDrivers().then((drivers) => dispatch({type: "LoadDrivers", drivers}))
   },[])
 
-
-
-  const [triggerUpdate, setTriggerUpdate] = useState(true)
-  const [driver, setDriver] = useState({})
 
   return (
     <AppContext.Provider value={{state, dispatch}}>

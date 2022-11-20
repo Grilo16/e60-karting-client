@@ -1,6 +1,5 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../App";
-import { getAllRaceDriversByDriversId, getRaceResulByRaceId } from "../../repositories/raceDriverRepo";
 import styled from "styled-components"
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import SubmitButton from "../../components/formComponents/SubmitButton";
