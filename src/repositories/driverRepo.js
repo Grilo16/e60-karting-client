@@ -25,4 +25,4 @@ const driverRepo = {
 
 };
 
-module.exports = driverRepo;
+export default driverRepo;

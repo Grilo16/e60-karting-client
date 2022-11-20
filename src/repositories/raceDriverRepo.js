@@ -32,4 +32,4 @@ const raceDriverRepo = {
 
 }
 
-module.exports = raceDriverRepo;
+export default raceDriverRepo;

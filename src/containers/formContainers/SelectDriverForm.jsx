@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components"
 import { AppContext } from "../../App";
 import DropDownBox from "../../components/formComponents/DropdownBox";
 import SubmitButton from "../../components/formComponents/SubmitButton";
-import { getDriverById } from "../../repositories/driverRepo";
 import {useNavigate} from "react-router-dom"
+import driverRepo from "../../repositories/driverRepo";
 
 const SelectDriverForm = () => {
 
@@ -12,10 +12,16 @@ const SelectDriverForm = () => {
 
     const {state, dispatch} = useContext(AppContext)
 
+    
+    useEffect(()=>{
+        driverRepo.getAllDrivers().then((drivers) => dispatch({type: "LoadDrivers", drivers}))
+      },[])
+    
+
     const navigate = useNavigate()
     
     const handleSelectDriver = () => {
-        getDriverById(selected).then((driver)=>{
+        driverRepo.getDriverById(selected).then((driver)=>{
             dispatch({type: "SelectDriver", driver})
             
         })

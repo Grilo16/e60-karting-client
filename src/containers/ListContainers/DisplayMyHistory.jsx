@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "../../App";
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import { ContentDiv } from "../../pages/HomePage";
-import { getAllRaceDriversByDriversId, getRaceResulByRaceId } from "../../repositories/raceDriverRepo";
+import raceDriverRepo from "../../repositories/raceDriverRepo";
 import SelectDriverForm from "../formContainers/SelectDriverForm";
 import SetPositionForm from "../formContainers/SetPositionForm";
 import DisplayRaceResults from "./DisplayRaceResults";
@@ -24,7 +24,7 @@ const DisplayMyHistory = () => {
     userId = state.selectedDriver.id;
   }
   useEffect(() => {
-    getAllRaceDriversByDriversId(userId).then((myRaces) => {
+    raceDriverRepo.getAllRaceDriversByDriversId(userId).then((myRaces) => {
       dispatch({ type: "LoadMyRaces", myRaces });
     });
   }, []);
@@ -62,7 +62,7 @@ const DisplayMyHistory = () => {
   const handleClick = (iconData) => {
     const id = iconData.raceId
     
-    getRaceResulByRaceId(id).then((raceResults)=>{
+    raceDriverRepo.getRaceResulByRaceId(id).then((raceResults)=>{
         dispatch({type: "LoadRaceResults", raceResults})
     }) 
         

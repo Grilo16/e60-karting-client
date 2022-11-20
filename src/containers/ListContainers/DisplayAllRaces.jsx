@@ -4,19 +4,19 @@ import SubmitButton from "../../components/formComponents/SubmitButton";
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import { addDriverToRace } from "../../repositories/raceDriverRepo";
 import styled from "styled-components"
-import { getAllRaces } from "../../repositories/raceRepo";
+import raceRepo from "../../repositories/raceRepo";
 
 const DisplayAllRaces = () => {
   const { state, dispatch } = useContext(AppContext);
 
   useEffect(() => {
-    getAllRaces().then((allRaces) => {
+    raceRepo.getAllRaces().then((allRaces) => {
       dispatch({ type: "LoadAllRaces", allRaces: allRaces });
     });
   }, []);
 
   const handleSignUp = (raceId) => {
-    addDriverToRace(state.selectedDriver.id, raceId);
+    raceRepo.addDriverToRace(state.selectedDriver.id, raceId);
   };
 
   const data = state.allRaces

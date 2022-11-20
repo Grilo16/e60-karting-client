@@ -4,7 +4,7 @@ import { AppContext } from "../../App";
 import InputField from "../../components/formComponents/InputField";
 import SubmitButton from "../../components/formComponents/SubmitButton";
 import { PageTitleH1 } from "../../pages/HomePage";
-import { addNewDriver, getAllDrivers } from "../../repositories/driverRepo";
+import driverRepo from "../../repositories/driverRepo";
 
 const SignUpForm = ({setTriggerUpdate, triggerUpdate}) => {
 
@@ -15,8 +15,8 @@ const SignUpForm = ({setTriggerUpdate, triggerUpdate}) => {
         const driverObj = {
             name : userName
         }
-        addNewDriver(driverObj).then(()=>{
-            getAllDrivers().then((drivers)=> dispatch({type: "LoadDrivers", drivers}))
+        driverRepo.addNewDriver(driverObj).then(()=>{
+            driverRepo.getAllDrivers().then((drivers)=> dispatch({type: "LoadDrivers", drivers}))
         })
     };
 

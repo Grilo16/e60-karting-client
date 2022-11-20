@@ -2,7 +2,7 @@ import styled from "styled-components"
 import InputField from "../../components/formComponents/InputField";
 import { useContext, useState } from "react";
 import SubmitButton from "../../components/formComponents/SubmitButton";
-import { getAllRaceDriversByDriversId, setRaceDriversPosition } from "../../repositories/raceDriverRepo";
+import raceDriverRepo from "../../repositories/raceDriverRepo";
 import { AppContext } from "../../App";
 
 const SetPositionForm = ({raceId}) => {
@@ -23,8 +23,8 @@ const SetPositionForm = ({raceId}) => {
     const handleSetPositions = () => {
         
         const positionObj = {id: raceId, startPosition: startPosition, finishPosition: finishPosition}
-        setRaceDriversPosition(positionObj).then(()=>{
-            getAllRaceDriversByDriversId(driver.id).then((myRaces)=>{
+        raceDriverRepo.setRaceDriversPosition(positionObj).then(()=>{
+            raceDriverRepo.getAllRaceDriversByDriversId(driver.id).then((myRaces)=>{
                 dispatch({type: "LoadMyRaces", myRaces})
             })
         })

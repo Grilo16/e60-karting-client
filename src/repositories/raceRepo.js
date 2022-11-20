@@ -16,4 +16,4 @@ const raceRepo = {
   },
 };
 
-module.exports = raceRepo;
+export default raceRepo;

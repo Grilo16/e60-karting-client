@@ -3,7 +3,7 @@ import styled from "styled-components"
 import DatePicker from "../../components/formComponents/DatePicker";
 import InputField from "../../components/formComponents/InputField";
 import SubmitButton from "../../components/formComponents/SubmitButton";
-import { addNewRace } from "../../repositories/raceRepo";
+import raceRepo from "../../repositories/raceRepo";
 
 const NewRaceForm = ({setTriggerUpdate, triggerUpdate}) => {
 
@@ -19,7 +19,7 @@ const NewRaceForm = ({setTriggerUpdate, triggerUpdate}) => {
             raceDate: dateObj, 
             location: location,
         }
-        addNewRace(raceObj)
+        raceRepo.addNewRace(raceObj)
         setTriggerUpdate(!triggerUpdate)
     };
 
