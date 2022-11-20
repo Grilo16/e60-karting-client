@@ -15,7 +15,11 @@ const SelectDriverForm = () => {
     const navigate = useNavigate()
     
     const handleSelectDriver = () => {
-        getDriverById(selected).then((driver)=>dispatch({type: "SelectDriver", driver}))
+        getDriverById(selected).then((driver)=>{
+            dispatch({type: "SelectDriver", driver})
+            
+        })
+        
             
         navigate("/dashboard")        
     };
