@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import ListIcon from "../../components/ListDisplayComponents/ListIcon";
-import { getAllDrivers } from "../../repositories/driverRepo";
+// import { getAllDrivers } from "../../repositories/driverRepo";
 import styled from "styled-components";
 
 const DisplayAllDrivers = ({ triggerUpdate , setDriver}) => {
   const [drivers, setDrivers] = useState([]);
 
-  useEffect(() => {
-    getAllDrivers().then(setDrivers);
-  }, [triggerUpdate]);
+  // useEffect(() => {
+  //   getAllDrivers().then(setDrivers);
+  // }, [triggerUpdate]);
 
   const data = drivers;
 
