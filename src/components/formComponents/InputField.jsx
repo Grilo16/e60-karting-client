@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const InputField = ({value, setState}) => {
+const InputField = ({value, setState, placeHolder}) => {
 
 const handleChange = (e) => {
     e.preventDefault()
@@ -8,7 +8,7 @@ const handleChange = (e) => {
 };
 
     return(
-        <StyledInputField onChange={handleChange} value={value}/>
+        <StyledInputField onChange={handleChange} value={value} placeholder={placeHolder}/>
     )
 };
 

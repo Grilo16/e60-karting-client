@@ -15,7 +15,16 @@ const ListIcon = ({
   height,
   width,
   borderRadius,
+  iconClickFunction,
 }) => {
+
+  const handleClick = (e) => {
+    if (iconClickFunction){
+      iconClickFunction(dataObj)
+    }
+
+  };
+
   let keys;
   let iconContents;
   if (dataObj) {
@@ -40,7 +49,7 @@ const ListIcon = ({
   }
 
   return (
-    <StyledGridDiv
+    <StyledGridDiv onClick={handleClick}
       columns={columns}
       bgColor={bgColor}
       marginLeft={marginLeft}

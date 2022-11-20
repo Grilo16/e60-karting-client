@@ -33,6 +33,7 @@ const ListDisplay = ({
   iconMarginBottom,
   iconColumns,
   iconBorderRadius,
+  iconClickFunction,
   keysToShow,
   data,
 }) => {
@@ -79,6 +80,7 @@ const ListDisplay = ({
           paddingTop={iconPaddingTop}
           paddingBottom={iconPaddingBottom}
           borderRadius={iconBorderRadius}
+          iconClickFunction={iconClickFunction}
         />
       );
     });

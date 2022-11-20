@@ -9,23 +9,30 @@ import { ListContainerDiv } from "./DisplayAllDrivers";
 const DisplayAllRaces = ({triggerUpdate}) => {
 
     const {state, dispatch} = useContext(AppContext)
-    const [races, setRaces] = useState([])
-
+ 
     useEffect(()=>{
 
-        getAllRaces().then(setRaces)
+        getAllRaces().then((allRaces)=>{
+           
+            dispatch({type: "LoadAllRaces", allRaces: allRaces})
+        })
 
-    },[triggerUpdate])
+    },[])
 
 
     const handleSignUp = (raceId) => {
-        console.log(raceId)
-        console.log(state.selectedDriver.id)
         addDriverToRace(state.selectedDriver.id, raceId)
     };
 
 
-    const data = races.map((race) => {
+    const data = state.allRaces.filter((race)=>{
+            const {raceDate, ...rest} = race
+            const date = new Date(raceDate).getTime()
+            console.log(date)
+            const time = Date.now()
+            console.log(time)
+            return date > time
+    }).map((race) => {
         const {id, raceDate, name, location, ...rest} = {...race}
         const date = new Date(raceDate)
         const raceObj = {id: id, raceDate: date.toUTCString(), name: name, location: location, signUp: <SubmitButton value={"signUp"} clickFunction={handleSignUp} target={id}/>}

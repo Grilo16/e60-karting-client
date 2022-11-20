@@ -16,9 +16,24 @@ const reducer = (state, action) => {
 
       case "SelectDriver": 
         return {...state, selectedDriver: action.driver}
+
+      case "LoadAllRaces": 
+        return {...state, allRaces: action.allRaces}
   
       case "LoadDrivers": 
         return {...state, drivers: action.drivers}
+
+      case "LoadMyRaces":
+        return {...state, myRaces: action.myRaces}
+
+      case "SelectRace": 
+        return {...state, selectedRace: action.selectedRace}
+
+      case "LoadRaceResults":
+        return {...state, raceResults: action.raceResults}
+
+      case "DisplayRaceResults":
+        return {...state, displayRaceResults: action.bool}
 
       case "SetDashPage": 
         return {...state, dashPage: action.dashPage}
@@ -32,8 +47,14 @@ function App() {
 
   const initialState = {
     selectedDriver : {},
+    selectedRace: null,
+    allRaces: [],
     drivers: [],
+    myRaces: [],
+    raceResults: [],
+    displayRaceResults: false,
     dashPage: "upcomingRaces", 
+    
   }
 
 
