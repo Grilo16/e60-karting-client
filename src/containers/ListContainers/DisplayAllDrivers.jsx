@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ListDisplay from "../../components/ListDisplayComponents/ListDisplay";
 import ListIcon from "../../components/ListDisplayComponents/ListIcon";
-// import { getAllDrivers } from "../../repositories/driverRepo";
 import styled from "styled-components";
 
 const DisplayAllDrivers = ({ triggerUpdate , setDriver}) => {
